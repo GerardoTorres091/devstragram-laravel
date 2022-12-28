@@ -128,6 +128,8 @@ Pagina principal
 * puede ser un problema llamar tu modelo Proveedor porque eloquent esper la tabla proveedor, se peude reescribir en el modelo, pero por eso es importante usar ingles.
 
 
+### crear en una sola linea de comando el modelo migration factory
+> sail artisan make:model --migration --factory Post
 
 ## Usar herramienta para ver datos de forma gráfica
 
@@ -138,6 +140,15 @@ Pagina principal
 > FORWARD_DB_PORT=3309
 
 
+## factories
+* un factorie permite hacer testing a la base de datos, ideal en el periodo de desarroll, comprobar que la info se guarden correctamente.
+> sail artisan make:factory NombreFactory
+
+* ejectura factory
+> sail artisan tinker  //cli integrado para interactuar con la bd
+> $usuario = User::find(3);  //buscar la infor del id 3
+> App\Models\Post::factory() || Post::factory()
+> Post::factory()->time(200)->create();    //numero de veces a ejecutar
 
 
 
