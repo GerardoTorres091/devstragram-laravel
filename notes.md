@@ -151,7 +151,19 @@ Pagina principal
 > Post::factory()->time(200)->create();    //numero de veces a ejecutar
 
 
+## Relaciones con Eloquent
+* las relaciones en eloquent son métodos que existen y se definen en los modelos
+* un modelo va a tener un método y un tipo de relación, así como el modelo con cual está relacionado, a esto se le conoce como Colección.
 
+> $user->post   //modelo de usuario relacionado con posts
+
+* tipos de relaciones (las de lado izquierdo son las más utilizadas)
+
+|             |                    |
+|------------:|--------------------|
+| one to one  | has one of many    |
+| one to many | has one through    |
+| belongs to  | has many through   |
 
 
 
