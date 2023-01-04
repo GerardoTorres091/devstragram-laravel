@@ -4,11 +4,10 @@ server {
     listen 8080;
     listen [::]:8080;
     root /home/site/wwwroot/public; # changed for Laravel
-    try_files $uri $uri/ /index.php?$args;
-    index  index.php index.html index.htm;
     server_name  example.com www.example.com; 
 
     location / {            
+        index  index.php index.html index.htm;
         try_files $uri $uri/ /index.php?$args; # changed for Laravel
     }
 
