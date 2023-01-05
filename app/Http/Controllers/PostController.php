@@ -14,9 +14,12 @@ class PostController extends Controller
     }
     
     public function index(User $user){
+
+        $posts = Post::where('user_id', $user->id)->paginate(5);
         
         return view('dashboard',[
-            'user' => $user
+            'user'  => $user,
+            'posts' => $posts
         ]);
     }
 
@@ -50,7 +53,7 @@ class PostController extends Controller
         ]); */
 
         //otra opcion
-        $request->user()->post()->create([
+        $request->user()->posts()->create([
             'titulo'      => $request->titulo,
             'descripcion' => $request->descripcion,
             'imagen'      => $request->imagen,
